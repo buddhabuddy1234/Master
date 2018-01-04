@@ -31,10 +31,9 @@ public class DocReader{
 		FileReader file_to_read = new FileReader(path);
 		BufferedReader bf = new BufferedReader(file_to_read);
 		
-		String aLine;
 		int numberOfLines = 0;
 		
-		while ((aLine = bf.readLine()) != null){
+		while ( bf.readLine() != null){
 			numberOfLines++;
 		}
 		bf.close();

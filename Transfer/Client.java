@@ -16,6 +16,7 @@ public class Client {
 			DocReader reader = new DocReader(path);
 			//creates an array of lines of text in reader's file
 			String[] aryLines = reader.openFile();
+			System.out.println("Message is: ");
 			//goes through all lines of array and prints
 			for (int i = 0; i < aryLines.length; i++){
 				System.out.println(aryLines[i]);
@@ -57,6 +58,9 @@ public class Client {
 		
 		//new Socket at IP, Port. Connects with Server's socket and makes equivalent socket
 		Socket socket = new Socket(Store.kf_ip,Store.port);
+		
+		////I know I have to do something here with a loop, checking if server has command
+		
 		//new byte array at maximum file size of filesize
 		byte[] bytearray = new byte[filesize];
 		//gets server's OutputStream as this InputStream
@@ -79,9 +83,10 @@ public class Client {
 		bos.write(bytearray,0,currentTot);
 		bos.flush();
 		bos.close();
-
-		socket.close();
 		
+		////I know I have to end a loop here
+		
+		socket.close();
 		readOut();
 		//writeIn();
 
