@@ -83,7 +83,7 @@ public class Client {
 		socket.close();
 		
 		readOut();
-		writeIn();
+		//writeIn();
 
 	}
 }
