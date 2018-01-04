@@ -7,9 +7,10 @@ import java.util.Scanner;
 * BufferedOutputStream does something.
 */
 public class Client {
-	String path = path;
+	public static String path = "copy.doc";
+	public static Scanner scanner = new Scanner(System.in);
+
 	public static void readOut(){
-		Scanner scanner = new Scanner(System.in);
 		try{
 			
 			DocReader reader = new DocReader(path);
@@ -34,7 +35,7 @@ public class Client {
 			//creates writer for path & append == false
 			DocWriter data = new DocWriter(path, false);
 			
-			System.out.println("Please enter text to be written to " + 
+			System.out.println("Please enter text to be written to " + path);
 			String text = scanner.nextLine();
 			
 			data.writeToDoc(text);
@@ -82,6 +83,7 @@ public class Client {
 		socket.close();
 		
 		readOut();
+		writeIn();
 
 	}
 }
